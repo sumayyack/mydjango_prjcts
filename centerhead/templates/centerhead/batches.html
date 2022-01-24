@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="ADD COURSE">
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <table>
+                <tr>
+                    <td>COURSE_NAME</td>
+                    <td>BATCH_NAME</td>
+                </tr>
+                  {%for batch in batches%}
+
+                <tr>
+
+                    <td>{{batch.course}}</td>
+                    <td>{{batch.batch_name}}</td>
+
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>

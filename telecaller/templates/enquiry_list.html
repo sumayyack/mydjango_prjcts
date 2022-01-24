@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <h1>LIST HERE!!</h1>
+             <table class="table">
+                <tr>
+                    <th>STUDENT_NAME</th>
+                    <th>CONTACT</th>
+                    <th>EMAIL</th>
+                    <th>COURSE</th>
+                    <th>STATUS</th>
+                    <th>USER</th>
+                </tr>
+                {%for enquiry in enquiries%}
+                <tr>
+                    <td>{{enquiry.student_name}}</td>
+                    <td>{{enquiry.contact}}</td>
+                    <td>{{enquiry.email}}</td>
+                    <td>{{enquiry.course}}</td>
+                    <td>{{enquiry.status}}</td>
+                    <td>{{enquiry.created_by}}</td>
+                    <td> <a href=""class="btn btn-outline-warning">Remove</a></td>
+                     <td> <a href=""class="btn btn-outline-info">update</a></td>
+
+                </tr>
+
+
+
+                {%endfor%}
+
+            </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+</body>
+</html>
